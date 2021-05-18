@@ -13,4 +13,4 @@
 * Css :nail_care:
 
 #
-Inspired by: ["Drink Order"](https://github.com/graceaveris/React.js_drink_order_POS_system) of [@graceaveris](https://github.com/graceaveris)
+Inspired by: ["Self Sevice Cafe"](https://github.com/graceaveris/React.js_self_service_cafe_POS_system) of [@graceaveris](https://github.com/graceaveris)
