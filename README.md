@@ -5,7 +5,7 @@
 </p>
 
 ## Features :unicorn: 
-* Order a tea
+* Order a cake or coffee
 * Pay the bill 
 
 ## Technologies :mag_right:
