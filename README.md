@@ -6,6 +6,7 @@
 
 ## Features :unicorn: 
 * Order a cake or coffee
+* Check the list items
 * Pay the bill 
 
 ## Technologies :mag_right:
