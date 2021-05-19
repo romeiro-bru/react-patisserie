@@ -15,23 +15,33 @@ const menu = [
   { name: "Tartelette", price: 3.5, img: tartelette },
   { name: " Cinnamon roll", price: 1.5, img: cinnamon },
   { name: "Caramel Tart", price: 2.0, img: cake },
-  { name: "Croissant", price: 2.7, img: croissant },
-  { name: "Cherry Pie", price: 2.5, img: cherry },
-  { name: "Choco Cake", price: 3.7, img: sweet },
-  { name: "Coffee", price: 1.7, img: coffee }
+  { name: "Croissant", price: 2.5, img: croissant },
+  { name: "Cherry Pie", price: 3, img: cherry },
+  { name: "Choco Cake", price: 3.5, img: sweet },
+  { name: "Coffee", price: 1.5, img: coffee }
 ];
 
 export default function App() {
   const [total, setTotal] = useState(0);
+  const [orderList, setOrderList] = useState([]);
 
   const handleAdd = (e) => {
-    setTotal(e.target.value);
-    console.log(e.target.value);
+    const itemPrice = Number.parseFloat(e.target.value);
+    const finalBill = Number.parseFloat(total) + itemPrice;
+    setTotal(finalBill);
+
+    setOrderList([...orderList, `${e.target.name}: R$ ${e.target.value}`]);
+  };
+
+  const handleDecrement = (e) => {
+    const itemPrice = Number.parseFloat(e.target.value);
+    const finalBill = Number.parseFloat(total) - itemPrice;
+    return finalBill >= 0 ? setTotal(finalBill) : total;
   };
 
   const handleClick = () => {
     setTotal(0);
-    console.log("clicked");
+    setOrderList([]);
   };
   return (
     <div className="App">
@@ -45,12 +55,29 @@ export default function App() {
               {item.name}
             </p>
             <p>R$ {item.price}</p>
-            <button value={item.price} onClick={handleAdd}>
-              Add
+            <button
+              name={item.name}
+              value={item.price}
+              onClick={handleDecrement}
+            >
+              -
+            </button>
+            <button name={item.name} value={item.price} onClick={handleAdd}>
+              +
             </button>
           </li>
         ))}
       </ul>
+
+      <section className="order">
+        <ul>
+          {orderList.map((item, index) => (
+            <li key={index}>
+              <p>{item}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <section className="total">
         <p>Total: </p>
