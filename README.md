@@ -5,8 +5,9 @@
 </p>
 
 ## Features :unicorn: 
-* Order a cake or coffee
+* Order a dessert or a coffee
 * Check the list items
+* You can cancel items 
 * Pay the bill 
 
 ## Technologies :mag_right:
