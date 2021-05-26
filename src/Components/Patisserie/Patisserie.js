@@ -25,17 +25,13 @@ export function Patisserie() {
   const [total, setTotal] = useState(0);
   const [orderList, setOrderList] = useState([]);
 
-  const handleAdd = (e) => {
-    const itemPrice = Number.parseFloat(e.target.value);
-    const finalBill = Number.parseFloat(total) + itemPrice;
-    setTotal(finalBill);
-
-    setOrderList([...orderList, `${e.target.name}: R$ ${e.target.value}`]);
+  const handleAdd = (item) => {
+    setTotal(total + item.price);
+    setOrderList([...orderList, `${item.name}: R$ ${item.price}`]);
   };
 
-  const handleDecrement = (e) => {
-    const itemPrice = Number.parseFloat(e.target.value);
-    const finalBill = Number.parseFloat(total) - itemPrice;
+  const handleDecrement = (item) => {
+    const finalBill = total - item.price;
     return finalBill >= 0 ? setTotal(finalBill) : total;
   };
 
@@ -53,16 +49,8 @@ export function Patisserie() {
               {item.name}
             </p>
             <p>R$ {item.price}</p>
-            <button
-              name={item.name}
-              value={item.price}
-              onClick={handleDecrement}
-            >
-              -
-            </button>
-            <button name={item.name} value={item.price} onClick={handleAdd}>
-              +
-            </button>
+            <button onClick={() => handleDecrement(item)}>-</button>
+            <button onClick={() => handleAdd(item)}>+</button>
           </li>
         ))}
       </ul>
