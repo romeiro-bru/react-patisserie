@@ -1,14 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import "./style.css";
-import macaron from "./macaron.svg";
-import cinnamon from "./cinnamon.svg";
-import tartelette from "./tartelle.svg";
-import cake from "./cake.svg";
-import croissant from "./croissant.svg";
-import cherry from "./cherry-cake.svg";
-import sweet from "./sweet.svg";
-import coffee from "./coffee-cup.svg";
+import macaron from "../../../public/assets/svgs/macaron.svg";
+import cinnamon from "../../../public/assets/svgs/cinnamon.svg";
+import tartelette from "../../../public/assets/svgs/tartelle.svg";
+import cake from "../../../public/assets/svgs/cake.svg";
+import croissant from "../../../public/assets/svgs/croissant.svg";
+import cherry from "../../../public/assets/svgs/cherry-cake.svg";
+import sweet from "../../../public/assets/svgs/sweet.svg";
+import coffee from "../../../public/assets/svgs/coffee-cup.svg";
 
 const menu = [
   { name: "Macaron", price: 2.0, img: macaron },
